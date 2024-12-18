@@ -1,9 +1,9 @@
     @echo off
     setlocal EnableDelayedExpansion
-    cd C:\platform-tools
+    cd C:\Program Files (x86)\Minimal ADB and Fastboot
     rem set PATH=%PATH%;%~dp0\platform-tools
-    set PATH=%PATH%;C:\platform-tools
-    Android Debug Bridge (ADB) tools
+    set PATH=%PATH%;C:\Program Files (x86)\Minimal ADB and Fastboot
+    ADB SETUP IDATA by minitools (Minimal ADB and Fastboot)
     adb start-server
     rem bạn hãy thay đổi và pass wifi tại đây ================================================================================================
                 ::set duong_dan_app_ban_cu=D:\ANT\Program\File_APP_APK\JTSprinter_version\JTSprinter1.1.125.apk
