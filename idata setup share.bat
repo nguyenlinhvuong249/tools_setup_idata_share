@@ -15,10 +15,36 @@
                 set pass_wifi_jt_expreess_office="Jtexpress2024!@#++"
             rem pass wifi J&T Expreess Guest
                 set pass_wifi_JT_Expreess_Guest="Jtexpress@2024++$"
-    rem ======================================================================================================================================
+    rem =======================================================================================================================
         FOR %%a IN (%duong_dan_app_ban_cu%) DO SET JTSprinter_version_cu=%%~na
         FOR %%a IN (%duong_dan_app_ban_moi%) DO SET JTSprinter_version_new=%%~na
+    ::=========================================================================================================================
 :: chương trình
+    rem check chương trình ADB ================================================================================================
+        cls
+        echo Dang kiem tra thiet bi ket noi qua ADB...
+        adb devices >nul 2>&1
+        if ERRORLEVEL 1 (
+            echo Loi: ADB chua duoc cai dat hoac cau hinh dung.
+            pause
+            exit
+        )
+
+        for /f "skip=1 tokens=1" %%i in ('adb devices') do (
+            if "%%i"=="List" goto :no_device
+            if not "%%i"=="" (
+                echo Thiet bi da ket noi: %%i
+                goto :adb_enabled
+            )
+        )
+
+        :no_device
+        echo Khong co thiet bi nao ket noi hoac ADB chua duoc bat.
+        pause
+        exit
+        :adb_enabled
+        goto mainmenu
+    ::=========================================================================================================================
 ::=============================================================================================================================
 cls
     :mainmenu
