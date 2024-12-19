@@ -216,7 +216,7 @@ cls
                                      adb shell content delete --uri content://settings/system --where "name=\'system_locales\'"
                                      adb shell content insert --uri content://settings/system --bind name:s:system_locales --bind value:s:vi-VN
                                     rem xóa app JT cũ
-                                     adb uninstall "%packages_name_JT_cu%"
+                                     adb uninstall "%packages_name_JT_cu_1%"
                                     rem cài app JT bản mới nhất
                                      adb install -r "%duong_dan_app_ban_moi%"
                                     rem adb install -r "%duong_dan_app_ban_cu%" dùng khi bản mới lỗi
@@ -261,13 +261,12 @@ cls
                             echo ========================================= Xac nhan thuc hien ==========================================
                             echo =                                                                                                     =
                             echo =  - Nhung ung dung se duoc an                                                                        =
-                            echo =          * Chrome                                =            * Google Play                         =
-                            echo =          * Google Drive                          =            * Email                               =
-                            echo =          * Tro Ly                                =            * Google                              =
                             echo =          * Bo cong cu SIM                        =                                                  =
                             echo =  - Nhung ung dung se duoc XOA                                                                       =
                             echo =          * Youtube                               =            * YT Music                            =
-                            echo =          * Chrome                                =                                                  =
+                            echo =          * Google Drive                          =            * Email                               =
+                            echo =          * Tro Ly                                =            * Google                              =
+                            echo =          * Chrome                                =            * Google Play                         =
                             echo =  - Ung dung JT ban cu se duoc XOA                                                                   =
                             echo =  - Tao thu muc apk_file                                                                             =
                             echo =  - Sao chep file cai app JT vao thiep bi                                                            =
@@ -316,27 +315,25 @@ cls
                                     rem bật giây trên thanh thông báo
                                      adb shell settings put secure clock_seconds 1
                                     rem xóa app JT cũ
-                                     adb uninstall "%packages_name_JT_cu_autoid_Q9%"
+                                     adb uninstall "%packages_name_JT_cu_2%"
                                     rem cài app JT bản mới nhất
                                      adb install -r "%duong_dan_app_ban_moi%"
                                         rem adb install -r "%duong_dan_app_ban_cu%" dùng khi bản mới lỗi
                                     rem ẩn ứng dụng
-                                     adb shell pm disable-user com.android.chrome
-                                     adb shell pm disable-user com.android.vending
-                                     adb shell pm disable-user com.google.android.apps.docs
-                                     adb shell pm disable-user com.google.android.gm
-                                     adb shell pm disable-user com.google.android.apps.googleassistant
-                                     adb shell pm disable-user com.google.android.gms
                                      adb shell pm disable-user com.android.stk
-                                     adb shell pm disable-user com.google.android.videos
                                      adb shell pm disable-user com.android.cellbroadcastreceiver
-                                     adb shell pm disable-user com.google.android.apps.tachyon
-                                     adb shell pm disable-user com.google.android.googlequicksearchbox
-                                     adb shell pm disable-user com.google.android.apps.maps
                                     rem xóa ứng dụng không cần thiết
                                      adb shell pm uninstall -k --user 0 com.android.chrome
+                                     adb shell pm uninstall -k --user 0 com.android.vending
                                      adb shell pm uninstall -k --user 0 com.google.android.apps.youtube.music
                                      adb shell pm uninstall -k --user 0 com.google.android.youtube
+                                     adb shell pm uninstall -k --user 0 com.google.android.apps.docs
+                                     adb shell pm uninstall -k --user 0 com.google.android.apps.tachyon
+                                     adb shell pm uninstall -k --user 0 com.google.android.gm
+                                     adb shell pm uninstall -k --user 0 com.google.android.googlequicksearchbox
+                                     adb shell pm uninstall -k --user 0 com.google.android.videos
+                                     adb shell pm uninstall -k --user 0 com.google.android.apps.maps
+                                     adb shell pm uninstall -k --user 0 com.google.android.apps.googleassistant
                                     rem tạo thư mục apk_file trong máy
                                      adb shell mkdir /storage/emulated/0/apk_file
                                     rem copy file từ máy tính sang thiếp bị
@@ -353,13 +350,12 @@ cls
                             echo ========================================= Xac nhan thuc hien ==========================================
                             echo =                                                                                                     =
                             echo =  - Nhung ung dung se duoc an                                                                        =
-                            echo =          * Chrome                                =            * Google Play                         =
-                            echo =          * Google Drive                          =            * Email                               =
-                            echo =          * Tro Ly                                =            * Google                              =
                             echo =          * Bo cong cu SIM                        =                                                  =
                             echo =  - Nhung ung dung se duoc XOA                                                                       =
                             echo =          * Youtube                               =            * YT Music                            =
-                            echo =          * Chrome                                =                                                  =
+                            echo =          * Google Drive                          =            * Email                               =
+                            echo =          * Tro Ly                                =            * Google                              =
+                            echo =          * Chrome                                =            * Google Play                         =
                             echo =  - Ung dung JT ban cu se duoc XOA                                                                   =
                             echo =  - Tao thu muc apk_file                                                                             =
                             echo =  - Sao chep file cai app JT vao thiep bi                                                            =
@@ -409,7 +405,7 @@ cls
                                     rem bật giây trên thanh thông báo
                                      adb shell settings put secure clock_seconds 1
                                     rem xóa app JT cũ
-                                     adb uninstall "%packages_name_JT_cu%"
+                                     adb uninstall "%packages_name_JT_cu_1%"
                                     rem cài app JT bản mới nhất
                                      adb install -r "%duong_dan_app_ban_moi%"
                                     rem adb install -r "%duong_dan_app_ban_cu%" dùng khi bản mới lỗi
@@ -418,36 +414,20 @@ cls
                                     rem copy file từ máy tính sang thiếp bị
                                      adb push "%duong_dan_app_ban_moi%" /storage/emulated/0/apk_file
                                     rem ẩn ứng dụng
-                                     adb shell pm disable-user com.android.chrome
-                                     adb shell pm disable-user com.android.vending
-                                     adb shell pm disable-user com.google.android.apps.docs
-                                     adb shell pm disable-user com.google.android.gm
-                                     adb shell pm disable-user com.google.android.apps.googleassistant
-                                     adb shell pm disable-user com.google.android.gms
                                      adb shell pm disable-user com.android.stk
-                                     adb shell pm disable-user com.google.android.videos
                                      adb shell pm disable-user com.android.cellbroadcastreceiver
-                                     adb shell pm disable-user com.google.android.apps.tachyon
-                                     adb shell pm disable-user com.google.android.googlequicksearchbox
-                                     adb shell pm disable-user com.google.android.apps.maps
                                     rem xóa ứng dụng không cần thiết
                                      adb shell pm uninstall -k --user 0 com.android.chrome
+                                     adb shell pm uninstall -k --user 0 com.android.vending
                                      adb shell pm uninstall -k --user 0 com.google.android.apps.youtube.music
                                      adb shell pm uninstall -k --user 0 com.google.android.youtube
-                                    rem mở ứng dụng scanpro lên setup
-                                    cls
-                                     adb shell am start -n com.idata.iscanv2/com.idata.iscanv2.MainActivity
-                                    echo sau khi reset vao app "iSanPro" ===== app setting
-                                    echo ============================================================
-                                    echo additional content              ===== "null"
-                                    echo scan result output mode         ===== "output to broadcast"
-                                    echo ============================================================
-                                    echo sau khi SETUP vui long an phim bat ki de ket thuc
-                                    pause
-                                     adb shell am force-stop com.idata.iscanv2
-                                    cls
-                                    timeout /t 05
-                                     adb reboot
+                                     adb shell pm uninstall -k --user 0 com.google.android.apps.docs
+                                     adb shell pm uninstall -k --user 0 com.google.android.apps.tachyon
+                                     adb shell pm uninstall -k --user 0 com.google.android.gm
+                                     adb shell pm uninstall -k --user 0 com.google.android.googlequicksearchbox
+                                     adb shell pm uninstall -k --user 0 com.google.android.videos
+                                     adb shell pm uninstall -k --user 0 com.google.android.apps.maps
+                                     adb shell pm uninstall -k --user 0 com.google.android.apps.googleassistant
                                     cls
                                     goto menu_auto_setup
                             ::=================================================================================================
