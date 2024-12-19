@@ -25,25 +25,29 @@
         echo Dang kiem tra thiet bi ket noi qua ADB...
         adb devices >nul 2>&1
         if ERRORLEVEL 1 (
-            echo Loi: ADB chua duoc cai dat hoac cau hinh dung.
+            echo Loi: ADB chua duoc cai dat hoac cau hinh dung
+            echo VUI LONG KIEM TRA LAI
             pause
             exit
         )
-
         for /f "skip=1 tokens=1" %%i in ('adb devices') do (
             if "%%i"=="List" goto :no_device
             if not "%%i"=="" (
                 echo Thiet bi da ket noi: %%i
-                goto :adb_enabled
+                goto :mainmenu
             )
         )
-
-        :no_device
-        echo Khong co thiet bi nao ket noi hoac ADB chua duoc bat.
-        pause
-        exit
-        :adb_enabled
-        goto mainmenu
+            :no_device
+                echo.
+                echo.
+                echo ========================================= Xac nhan thuc hien ==========================================
+                echo =                                                                                                     =
+                echo =                     * KHONG CO THIEP BI NAO DUOC KET NOI HOAT ADB CHUA DUOC BAT *                   =
+                echo =                                    VUI LONG KIEM TRA VA THU LAI                                     =
+                echo =                                                                                                     =
+                echo =======================================================================================================
+                pause
+                exit
     ::=========================================================================================================================
 ::=============================================================================================================================
 cls
