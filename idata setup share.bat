@@ -204,21 +204,21 @@ cls
                             echo =======================================================================================================
                             echo =       [rs] . Khoi dong lai thiep bi              =       [ex] . THOAT CHUONG TRINH                  =
                             echo =======================================================================================================
-                            set /p menu_auto_setup_K1S=" VUI LONG NHAP LUA CHON CUA BAN :   "
-                                if "%menu_auto_setup_K1S%"=="y" (
+                            set /p menu_auto_setup_K1S_cu=" VUI LONG NHAP LUA CHON CUA BAN :   "
+                                if "%menu_auto_setup_K1S_cu%"=="y" (
                                     cls
-                                    goto start_run_K1S
-                                ) else if "%menu_auto_setup_K1S%"=="n" (
+                                    goto start_run_K1S_cu
+                                ) else if "%menu_auto_setup_K1S_cu%"=="n" (
                                     cls
                                     goto menu_auto_setup
-                                ) else if "%menu_auto_setup_K1S%"=="H" (
+                                ) else if "%menu_auto_setup_K1S_cu%"=="H" (
                                     cls
                                     goto mainmenu            
-                                ) else if "%menu_auto_setup_K1S%"=="rs" (
+                                ) else if "%menu_auto_setup_K1S_cu%"=="rs" (
                                     cls
                                      adb reboot
-                                    goto menu_auto_setup_K1S
-                                ) else if "%menu_auto_setup_K1S%"=="ex" (
+                                    goto menu_auto_setup_K1S_cu
+                                ) else if "%menu_auto_setup_K1S_cu%"=="ex" (
                                     exit
                                 ) else (
                                     cls
@@ -226,7 +226,7 @@ cls
                                     echo.
                                     echo                LUA CHON BAN NHAP VAO KHONG HOP LE
                                     echo                        VUI LONG NHAP LAI !
-                                    goto menu_auto_setup_K1S
+                                    goto menu_auto_setup_K1S_cu
                                 )
                         ::=====================================================================================================
                             rem start_run_K1S =================================================================================
@@ -399,21 +399,21 @@ cls
                             echo =======================================================================================================
                             echo =       [rs] . Khoi dong lai thiep bi              =       [ex] . THOAT CHUONG TRINH                  =
                             echo =======================================================================================================
-                            set /p menu_auto_setup_K1S=" VUI LONG NHAP LUA CHON CUA BAN :   "
-                                if "%menu_auto_setup_K1S%"=="y" (
+                            set /p menu_auto_setup_K1S_moi=" VUI LONG NHAP LUA CHON CUA BAN :   "
+                                if "%menu_auto_setup_K1S_moi%"=="y" (
                                     cls
                                     goto start_run_K1S_moi
-                                ) else if "%menu_auto_setup_K1S%"=="n" (
+                                ) else if "%menu_auto_setup_K1S_moi%"=="n" (
                                     cls
                                     goto menu_auto_setup
-                                ) else if "%menu_auto_setup_K1S%"=="H" (
+                                ) else if "%menu_auto_setup_K1S_moi%"=="H" (
                                     cls
                                     goto mainmenu            
-                                ) else if "%menu_auto_setup_K1S%"=="rs" (
+                                ) else if "%menu_auto_setup_K1S_moi%"=="rs" (
                                     cls
                                      adb reboot
-                                    goto menu_auto_setup_K1S
-                                ) else if "%menu_auto_setup_K1S%"=="ex" (
+                                    goto menu_auto_setup_K1S_moi
+                                ) else if "%menu_auto_setup_K1S_moi%"=="ex" (
                                     exit
                                 ) else (
                                     cls
@@ -421,7 +421,7 @@ cls
                                     echo.
                                     echo                LUA CHON BAN NHAP VAO KHONG HOP LE
                                     echo                        VUI LONG NHAP LAI !
-                                    goto menu_auto_setup_K1S
+                                    goto menu_auto_setup_K1S_moi
                                 )
                         ::=====================================================================================================
                             rem start_run_K1S_moi =============================================================================
