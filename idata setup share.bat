@@ -40,8 +40,6 @@
             )
         )
             :no_device
-		echo %duong_dan_app_ban_moi% .. 1.1.151
-		echo %duong_dan_app_ban_cu% .. 1.1.125
                 echo.
                 echo.
                 echo ========================================= Xac nhan thuc hien ==========================================
