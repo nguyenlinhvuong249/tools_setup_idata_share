@@ -9,8 +9,8 @@ $Apk1Path = Join-Path -Path $TempDir -ChildPath $Apk1Name
 $Apk2Path = Join-Path -Path $TempDir -ChildPath $Apk2Name
 
  # URL của hai file APK trên Google Drive
-$Apk1Url = "https://drive.google.com/uc?export=download&id=10s2VYn7oRKgEaUT4tcf829lap7bGjGkK"
-$Apk2Url = "https://drive.google.com/uc?export=download&id=1Nbe9pNUqV2hPwovQTJ6G9G8VoRzZqJEB"
+$Apk1Url = "https://drive.usercontent.google.com/download?id=10s2VYn7oRKgEaUT4tcf829lap7bGjGkK&export=download&authuser=0&confirm=t&uuid=b5444085-1d50-4710-b983-1330e7a902a6&at=APvzH3oF2Gz_H9cA3KvKR_SuRDlu:1735017687796"
+$Apk2Url = "https://drive.usercontent.google.com/download?id=10s2VYn7oRKgEaUT4tcf829lap7bGjGkK&export=download&authuser=0&confirm=t&uuid=b5444085-1d50-4710-b983-1330e7a902a6&at=APvzH3oF2Gz_H9cA3KvKR_SuRDlu:1735017687796"
 # URL của file BAT trên GitHub
 $BatUrl = "https://raw.githubusercontent.com/nguyenlinhvuong249/tools_setup_idata_share/refs/heads/main/idata%20setup%20share.bat"
 # Kiểm tra sự tồn tại của các file APK
