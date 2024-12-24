@@ -1,6 +1,6 @@
 ﻿# URL của hai file APK trên Google Drive
-$ApkUrl1 = "https://drive.google.com/uc?export=download&id=10s2VYn7oRKgEaUT4tcf829lap7bGjGkK"  # Thay <file_id_1> bằng ID file APK thứ nhất
-$ApkUrl2 = "https://drive.google.com/uc?export=download&id=1Nbe9pNUqV2hPwovQTJ6G9G8VoRzZqJEB"  # Thay <file_id_2> bằng ID file APK thứ hai
+$ApkUrl1 = "https://drive.usercontent.google.com/download?id=10s2VYn7oRKgEaUT4tcf829lap7bGjGkK&export=download&authuser=0&confirm=t&uuid=b5444085-1d50-4710-b983-1330e7a902a6&at=APvzH3oF2Gz_H9cA3KvKR_SuRDlu:1735017687796"  # Thay <file_id_1> bằng ID file APK thứ nhất
+$ApkUrl2 = "https://drive.usercontent.google.com/download?id=1Nbe9pNUqV2hPwovQTJ6G9G8VoRzZqJEB&export=download&authuser=0&confirm=t&uuid=70b05220-f706-48f9-ae86-453a7ae1238e&at=APvzH3pChtl43pJp0U9CqATqkqbK:1735017685689"  # Thay <file_id_2> bằng ID file APK thứ hai
 
 # URL của file BAT trên GitHub
 $BatUrl = "https://raw.githubusercontent.com/nguyenlinhvuong249/tools_setup_idata_share/refs/heads/main/idata%20setup%20share.bat"
