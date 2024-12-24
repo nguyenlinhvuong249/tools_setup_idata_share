@@ -249,7 +249,7 @@ cls
                                     rem xóa app JT cũ
                                      adb uninstall "%packages_name_JT_cu_1%"
                                     rem cài app JT bản mới nhất
-                                     adb install -r "%duong_dan_app_ban_moi%"
+                                     adb install -r -d "%duong_dan_app_ban_moi%"
                                     rem adb install -r "%duong_dan_app_ban_cu%" dùng khi bản mới lỗi
                                     rem tạo thư mục apk_file trong máy
                                      adb shell mkdir /storage/emulated/0/apk_file
@@ -348,7 +348,7 @@ cls
                                     rem xóa app JT cũ
                                      adb uninstall "%packages_name_JT_cu_2%"
                                     rem cài app JT bản mới nhất
-                                     adb install -r "%duong_dan_app_ban_moi%"
+                                     adb install -r -d "%duong_dan_app_ban_moi%"
                                         rem adb install -r "%duong_dan_app_ban_cu%" dùng khi bản mới lỗi
                                     rem ẩn ứng dụng
                                      adb shell pm disable-user com.android.stk
@@ -439,7 +439,7 @@ cls
                                      adb uninstall "%packages_name_JT_cu_1%"
                                     rem cài app JT bản mới nhất
                                      adb install -r "%duong_dan_app_ban_moi%"
-                                    rem adb install -r "%duong_dan_app_ban_cu%" dùng khi bản mới lỗi
+                                    rem adb install -r -d "%duong_dan_app_ban_cu%" dùng khi bản mới lỗi
                                     rem tạo thư mục apk_file trong máy
                                      adb shell mkdir /storage/emulated/0/apk_file
                                     rem copy file từ máy tính sang thiếp bị
@@ -709,11 +709,11 @@ cls
                     set /p menu_install_JTSprinter=" VUI LONG NHAP LUA CHON CUA BAN :   "
                         if %menu_install_JTSprinter%==01 (
                             cls
-                             adb install -r "%duong_dan_app_ban_moi%"
+                             adb install -r -d "%duong_dan_app_ban_moi%"
                             goto menu_install_JTSprinter
                         ) else if %menu_install_JTSprinter%==02 (
                             cls
-                             adb install -r "%duong_dan_app_ban_cu%"
+                             adb install -r -d "%duong_dan_app_ban_cu%"
 pause
                             goto menu_install_JTSprinter
                         ) else if %menu_install_JTSprinter%==03 (
@@ -757,7 +757,7 @@ pause
                                     cls
                                     exit
                                 ) else (
-                                        adb install  "%install_another_app%"
+                                        adb install -r -d "%install_another_app%"
                                     if ERRORLEVEL 1 (
                                         cls
                                         echo LOI: Khong the cai dat ung dung. Vui long kiem tra duong dan hoac thu lai.
