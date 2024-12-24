@@ -40,7 +40,7 @@
             )
         )
             :no_device
-		echo "%duong_dan_app_ban_moi%"
+		echo %duong_dan_app_ban_moi%
                 echo.
                 echo.
                 echo ========================================= Xac nhan thuc hien ==========================================
