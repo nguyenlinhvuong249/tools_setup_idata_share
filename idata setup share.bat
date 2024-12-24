@@ -1,7 +1,6 @@
     @echo off
     setlocal EnableDelayedExpansion
     cd C:\Program Files (x86)\Minimal ADB and Fastboot
-    rem set PATH=%PATH%;%~dp0\platform-tools
     set PATH=%PATH%;C:\Program Files (x86)\Minimal ADB and Fastboot
     ADB SETUP IDATA by minitools (Minimal ADB and Fastboot)
     adb start-server
