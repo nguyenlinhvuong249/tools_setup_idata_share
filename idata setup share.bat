@@ -6,10 +6,10 @@
     ADB SETUP IDATA by minitools (Minimal ADB and Fastboot)
     adb start-server
     rem bạn hãy thay đổi và pass wifi tại đây ================================================================================================
-                set duong_dan_app_ban_cu=C:\Users\PH\AppData\Local\Temp\JTSprinter1.1.125.apk
-                set duong_dan_app_ban_moi=C:\Users\PH\AppData\Local\Temp\JTSprinter1.1.151.apk
-		::set duong_dan_app_ban_cu=%1
-		::set duong_dan_app_ban_moi=%2
+                ::set duong_dan_app_ban_cu=C:\Users\PH\AppData\Local\Temp\JTSprinter1.1.125.apk
+                ::set duong_dan_app_ban_moi=C:\Users\PH\AppData\Local\Temp\JTSprinter1.1.151.apk
+		set duong_dan_app_ban_cu=%1
+		set duong_dan_app_ban_moi=%2
                 set packages_name_JT_cu_1=cn.yssoft.vietnam
                 set packages_name_JT_cu_2=cn.yssoft.philippines
                 set packages_name_JT_moi=com.jt.express.vietnam.outfield
