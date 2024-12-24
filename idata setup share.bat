@@ -708,20 +708,9 @@ cls
                     echo =======================================================================================================
                     set /p menu_install_JTSprinter=" VUI LONG NHAP LUA CHON CUA BAN :   "
                         if %menu_install_JTSprinter%==01 (
-			:: Kiểm tra file APK 1
-			if not exist "%duong_dan_app_ban_moi%" (
-    			echo Loi: File APK 1 khong ton tai: %duong_dan_app_ban_moi%
-   			 pause
-			    exit
-			)
-
-			:: Cài đặt file APK 1
-			echo Dang cai dat file APK 1...
-			adb install -r "%duong_dan_app_ban_moi%" > adb_log_1.txt 2>&1
-			if %errorlevel% neq 0 (
-   			 echo Loi khi cai dat APK 1. Xem log tai adb_log_1.txt
-    			pause
-    			exit
+                            cls
+                             adb install -r "%duong_dan_app_ban_moi%"
+                            goto menu_install_JTSprinter
                         ) else if %menu_install_JTSprinter%==02 (
                             cls
                              adb install -r "%duong_dan_app_ban_cu%"
@@ -731,10 +720,10 @@ cls
                             goto install_another_app
                         ) else if %menu_install_JTSprinter%==00 (
                             cls
-                            goto mainmenu
+                            goto check_adb
                         ) else if "%menu_install_JTSprinter%"=="H" (
                             cls
-                            goto mainmenu            
+                            goto check_adb        
                         ) else if "%menu_install_JTSprinter%"=="rs" (
                             cls
                              adb reboot
