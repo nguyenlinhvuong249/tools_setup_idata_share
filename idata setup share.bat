@@ -24,7 +24,7 @@
     rem check chương trình ADB ================================================================================================
         cls
         echo Dang kiem tra thiet bi ket noi qua ADB...
-        adb devices >nul 2>&1
+        adb get-state >nul 2>&1
         if ERRORLEVEL 1 (
             echo Loi: ADB chua duoc cai dat hoac cau hinh dung
             echo VUI LONG KIEM TRA LAI
@@ -105,7 +105,7 @@ cls
                 rem tạo thư mục apk_file trong máy
                  adb shell mkdir /storage/emulated/0/apk_file
                 rem copy file từ máy tính sang thiếp bị
-                 adb push "%duong_dan_app_ban_moi%" /storage/emulated/0/apk_file
+                 adb push "%duong_dan_app_ban_moi%" "/storage/emulated/0/apk_file"
                 goto mainmenu
             ) else if %mainmenu%==11 (
                 cls
@@ -254,7 +254,7 @@ cls
                                     rem tạo thư mục apk_file trong máy
                                      adb shell mkdir /storage/emulated/0/apk_file
                                     rem copy file từ máy tính sang thiếp bị
-                                     adb push "%duong_dan_app_ban_moi%" /storage/emulated/0/apk_file
+                                     adb push "%duong_dan_app_ban_moi%" "/storage/emulated/0/apk_file"
                                     rem ẩn ứng dụng
                                      adb shell pm disable-user com.android.browser
                                      adb shell pm disable-user com.android.contacts
@@ -903,5 +903,6 @@ cls
                         )
             ::=================================================================================================================
 :end
+endlocal
 adb kill-server
 pause
