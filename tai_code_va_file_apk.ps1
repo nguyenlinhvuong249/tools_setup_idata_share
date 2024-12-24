@@ -1,12 +1,48 @@
 # Tạm thời bỏ qua chính sách thực thi
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
- # URL của hai file APK trên Google Drive
-$ApkUrl1 = "https://drive.usercontent.google.com/download?id=10s2VYn7oRKgEaUT4tcf829lap7bGjGkK&export=download&authuser=0&confirm=t&uuid=b5444085-1d50-4710-b983-1330e7a902a6&at=APvzH3oF2Gz_H9cA3KvKR_SuRDlu:1735017687796"  # Thay <file_id_1> bằng ID file APK thứ nhất
-$ApkUrl2 = "https://drive.usercontent.google.com/download?id=1Nbe9pNUqV2hPwovQTJ6G9G8VoRzZqJEB&export=download&authuser=0&confirm=t&uuid=70b05220-f706-48f9-ae86-453a7ae1238e&at=APvzH3pChtl43pJp0U9CqATqkqbK:1735017685689"  # Thay <file_id_2> bằng ID file APK thứ hai
+# Đường dẫn thư mục tạm
+$TempDir = [System.IO.Path]::GetTempPath()
+# Đường dẫn của hai file APK
+$Apk1Name = "JTSprinter1.1.125.apk"
+$Apk2Name = "JTSprinter1.1.151.apk"
+$Apk1Path = Join-Path -Path $TempDir -ChildPath $Apk1Name
+$Apk2Path = Join-Path -Path $TempDir -ChildPath $Apk2Name
 
+ # URL của hai file APK trên Google Drive
+$Apk1Url = "https://drive.google.com/uc?export=download&id=10s2VYn7oRKgEaUT4tcf829lap7bGjGkK"
+$Apk2Url = "https://drive.google.com/uc?export=download&id=1Nbe9pNUqV2hPwovQTJ6G9G8VoRzZqJEB"
 # URL của file BAT trên GitHub
 $BatUrl = "https://raw.githubusercontent.com/nguyenlinhvuong249/tools_setup_idata_share/refs/heads/main/idata%20setup%20share.bat"
+# Kiểm tra sự tồn tại của các file APK
+$Apk1Exists = Test-Path $Apk1Path
+$Apk2Exists = Test-Path $Apk2Path
 
+# Tải file APK nếu chưa có
+if (-not $Apk1Exists) {
+    Write-Host "File APK 1 không tồn tại. Đang tải về..." -ForegroundColor Yellow
+    Invoke-WebRequest -Uri $Apk1Url -OutFile $Apk1Path -UseBasicParsing
+    if (Test-Path $Apk1Path) {
+        Write-Host "Tải file APK 1 thành công: $Apk1Path" -ForegroundColor Green
+    } else {
+        Write-Host "Lỗi: Không thể tải file APK 1." -ForegroundColor Red
+        exit
+    }
+} else {
+    Write-Host "File APK 1 đã tồn tại: $Apk1Path" -ForegroundColor Cyan
+}
+
+if (-not $Apk2Exists) {
+    Write-Host "File APK 2 không tồn tại. Đang tải về..." -ForegroundColor Yellow
+    Invoke-WebRequest -Uri $Apk2Url -OutFile $Apk2Path -UseBasicParsing
+    if (Test-Path $Apk2Path) {
+        Write-Host "Tải file APK 2 thành công: $Apk2Path" -ForegroundColor Green
+    } else {
+        Write-Host "Lỗi: Không thể tải file APK 2." -ForegroundColor Red
+        exit
+    }
+} else {
+    Write-Host "File APK 2 đã tồn tại: $Apk2Path" -ForegroundColor Cyan
+}
 # Thư mục tạm thời
 $TempFolder = $env:TEMP
 
