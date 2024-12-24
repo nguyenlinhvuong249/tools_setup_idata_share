@@ -8,7 +8,7 @@
     rem bạn hãy thay đổi và pass wifi tại đây ================================================================================================
                 set duong_dan_app_ban_cu=D:\ANT\Program\File_APP_APK\JTSprinter_version\JTSprinter1.1.125.apk
                 ::set duong_dan_app_ban_moi=D:\ANT\Program\File_APP_APK\JTSprinter_version\JTSprinter1.1.151.apk
-		set "duong_dan_app_ban_moi=%1"
+		set duong_dan_app_ban_moi=%1
                 set packages_name_JT_cu_1=cn.yssoft.vietnam
                 set packages_name_JT_cu_2=cn.yssoft.philippines
                 set packages_name_JT_moi=com.jt.express.vietnam.outfield
