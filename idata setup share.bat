@@ -714,7 +714,6 @@ cls
                         ) else if %menu_install_JTSprinter%==02 (
                             cls
                              adb install -r -d "%duong_dan_app_ban_cu%"
-pause
                             goto menu_install_JTSprinter
                         ) else if %menu_install_JTSprinter%==03 (
                             cls
