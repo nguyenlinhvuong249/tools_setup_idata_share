@@ -3,52 +3,53 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 # Đường dẫn thư mục tạm
 $TempDir = [System.IO.Path]::GetTempPath()
 # Đường dẫn của hai file APK
-$Apk1Name = "JTSprinter1.1.151.apk"
-$Apk2Name = "JTSprinter1.1.155.apk"
-$Apk1Path = Join-Path -Path $TempDir -ChildPath $Apk1Name
-$Apk2Path = Join-Path -Path $TempDir -ChildPath $Apk2Name
+$Apk_cu_name = "JTSprinter1.1.155.apk"
+$Apk_moi_name = "JTSprinter1.1.157.apk"
+$Apk_cu_Path = Join-Path -Path $TempDir -ChildPath $Apk_cu_name
+$Apk_moi_Path = Join-Path -Path $TempDir -ChildPath $Apk_moi_name
 
  # URL của hai file APK trên Google Drive
-$Apk1Url = "https://drive.usercontent.google.com/download?id=1Nbe9pNUqV2hPwovQTJ6G9G8VoRzZqJEB&export=download&authuser=0&confirm=t&uuid=4dda05a1-050b-4ba6-838c-aaf590106272&at=APvzH3rjFhYRs7CcjwyaO5DbBfWh%3A1735019534048"
-$Apk2Url = "https://drive.usercontent.google.com/download?id=1tSsvrDd959TR9_LanLUEGrjLSIgEh8_A&export=download&authuser=0&confirm=t&uuid=8b498d57-49c7-47e8-a04b-c74c4f0159c1&at=APvzH3pVcZLe1cbHMRPlM6LcOBFe:1735120967721"
+$Apk1Url = "https://drive.usercontent.google.com/download?id=1tSsvrDd959TR9_LanLUEGrjLSIgEh8_A&export=download&authuser=0&confirm=t&uuid=8b498d57-49c7-47e8-a04b-c74c4f0159c1&at=APvzH3pVcZLe1cbHMRPlM6LcOBFe:1735120967721"
+$Apk2Url = "https://drive.usercontent.google.com/download?id=12b8bVOTqfj09a2M-FEZ58tpUFYxFPCPf&export=download&authuser=0&confirm=t&uuid=d7be361e-ceed-43a5-ac9b-2d613e4626cc&at=AIrpjvMLI6k1IyyRcv2SiY2ukmKh:1736487767779"
+
 # URL của file BAT trên GitHub
 $BatUrl = "https://raw.githubusercontent.com/nguyenlinhvuong249/tools_setup_idata_share/refs/heads/main/idata%20setup%20share.bat"
 # Kiểm tra sự tồn tại của các file APK
-$Apk1Exists = Test-Path $Apk1Path
-$Apk2Exists = Test-Path $Apk2Path
+$Apk1Exists = Test-Path $Apk_cu_Path
+$Apk2Exists = Test-Path $Apk_moi_Path
 
 # Tải file APK nếu chưa có
 if (-not $Apk1Exists) {
-    Write-Host "File APK 1 không tồn tại. Đang tải về..." -ForegroundColor Yellow
-    Invoke-WebRequest -Uri $Apk1Url -OutFile $Apk1Path -UseBasicParsing
-    if (Test-Path $Apk1Path) {
-        Write-Host "Tải file APK 1 thành công: $Apk1Path" -ForegroundColor Green
+    Write-Host "File $Apk_cu_name không tồn tại. Đang tải về..." -ForegroundColor Yellow
+    Invoke-WebRequest -Uri $Apk1Url -OutFile $Apk_cu_Path -UseBasicParsing
+    if (Test-Path $Apk_cu_Path) {
+        Write-Host "Tải file $Apk_cu_name thành công: $Apk_cu_Path" -ForegroundColor Green
     } else {
-        Write-Host "Lỗi: Không thể tải file APK 1." -ForegroundColor Red
+        Write-Host "Lỗi: Không thể tải file $Apk_cu_name." -ForegroundColor Red
         exit
     }
 } else {
-    Write-Host "File APK 1 đã tồn tại: $Apk1Path" -ForegroundColor Cyan
+    Write-Host "File $Apk_cu_name đã tồn tại: $Apk_cu_Path" -ForegroundColor Cyan
 }
 
 if (-not $Apk2Exists) {
-    Write-Host "File APK 2 không tồn tại. Đang tải về..." -ForegroundColor Yellow
-    Invoke-WebRequest -Uri $Apk2Url -OutFile $Apk2Path -UseBasicParsing
-    if (Test-Path $Apk2Path) {
-        Write-Host "Tải file APK 2 thành công: $Apk2Path" -ForegroundColor Green
+    Write-Host "File $Apk_moi_name không tồn tại. Đang tải về..." -ForegroundColor Yellow
+    Invoke-WebRequest -Uri $Apk2Url -OutFile $Apk_moi_Path -UseBasicParsing
+    if (Test-Path $Apk_moi_Path) {
+        Write-Host "Tải file $Apk_moi_name thành công: $Apk_moi_Path" -ForegroundColor Green
     } else {
-        Write-Host "Lỗi: Không thể tải file APK 2." -ForegroundColor Red
+        Write-Host "Lỗi: Không thể tải file $Apk_moi_name." -ForegroundColor Red
         exit
     }
 } else {
-    Write-Host "File APK 2 đã tồn tại: $Apk2Path" -ForegroundColor Cyan
+    Write-Host "File $Apk_moi_name đã tồn tại: $Apk_moi_Path" -ForegroundColor Cyan
 }
 # Thư mục tạm thời
 $TempFolder = $env:TEMP
 
 # Đường dẫn file APK và BAT tạm thời
-$ApkFile1 = Join-Path -Path $TempFolder -ChildPath "JTSprinter1.1.151.apk"
-$ApkFile2 = Join-Path -Path $TempFolder -ChildPath "JTSprinter1.1.155.apk"
+$ApkFile1 = Join-Path -Path $TempFolder -ChildPath $Apk_cu_name
+$ApkFile2 = Join-Path -Path $TempFolder -ChildPath $Apk_moi_name
 $BatFile = Join-Path -Path $TempFolder -ChildPath "idata_setup_share.bat"
 
 # Tải file APK thứ nhất từ Google Drive
