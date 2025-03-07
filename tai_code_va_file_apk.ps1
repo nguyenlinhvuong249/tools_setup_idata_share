@@ -4,12 +4,12 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 $TempDir = [System.IO.Path]::GetTempPath()
 # Đường dẫn của hai file APK
 $Apk_cu_name = "JTSprinter1.1.153.apk"
-$Apk_moi_name = "JTSprinter1.1.155.apk"
+$Apk_moi_name = "JTSprinter1.1.159.apk"
 $Apk_cu_Path = Join-Path -Path $TempDir -ChildPath $Apk_cu_name
 $Apk_moi_Path = Join-Path -Path $TempDir -ChildPath $Apk_moi_name
 
  # URL của hai file APK trên Google Drive
-$Apk1Url = "https://drive.usercontent.google.com/download?id=1tALKzMWTPfFuB36h0Zmf3HbbMD2p2y-s&export=download&authuser=0&confirm=t&uuid=7f25b14e-4df0-4f9a-aaf7-80fd7b609c7e&at=AEz70l48od9ft-mVh3uCLwxU6dEz:1740479227568"
+$Apk1Url = "https://drive.usercontent.google.com/download?id=13R9Q1G4eG30aBcmjBXRXbTGfJpnhHmAV&export=download&authuser=0&confirm=t&uuid=29960d04-c175-495b-b194-696d0d3f1aed&at=AEz70l4QBVs2cVhuOg1bxl_DpGHH:1741337877961"
 $Apk2Url = "https://drive.usercontent.google.com/download?id=1tSsvrDd959TR9_LanLUEGrjLSIgEh8_A&export=download&authuser=0&confirm=t&uuid=8b498d57-49c7-47e8-a04b-c74c4f0159c1&at=APvzH3pVcZLe1cbHMRPlM6LcOBFe:1735120967721"
 # URL của file BAT trên GitHub
 $BatUrl = "https://raw.githubusercontent.com/nguyenlinhvuong249/tools_setup_idata_share/refs/heads/main/idata%20setup%20share.bat"
