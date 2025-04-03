@@ -1,4 +1,5 @@
     @echo off
+mode con: cols=105 lines=30
     setlocal EnableDelayedExpansion
     cd C:\Program Files (x86)\Minimal ADB and Fastboot
     set PATH=%PATH%;C:\Program Files (x86)\Minimal ADB and Fastboot
