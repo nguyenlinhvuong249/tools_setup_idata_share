@@ -24,7 +24,7 @@ mode con: cols=105 lines=30
         :checkpr
 		cls
         echo Dang kiem tra thiet bi ket noi qua ADB...
-        adb get-state >nul 2>&1
+        adb devices >nul 2>&1
         if ERRORLEVEL 1 (
             echo Loi: ADB chua duoc cai dat hoac cau hinh dung
             echo VUI LONG KIEM TRA LAI
@@ -61,8 +61,8 @@ mode con: cols=105 lines=30
 		                echo.
 		                echo                LUA CHON BAN NHAP VAO KHONG HOP LE
 		                echo                        VUI LONG NHAP LAI !
-		                goto checkpr
-		            )
+		                goto no_device
+               )
     ::=========================================================================================================================
 ::=============================================================================================================================
 cls
