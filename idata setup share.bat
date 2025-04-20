@@ -948,7 +948,7 @@ cls
                             goto cai_dat_nang_cao
                         ) else if %cai_dat_nang_cao%==03 (
                             adb reboot bootloader
-                            timeout /t 10
+                            timeout /t 15
                             fastboot reboot recovery
                             goto cai_dat_nang_cao
                         ) else if %cai_dat_nang_cao%==04 (
