@@ -49,11 +49,11 @@ mode con: cols=110 lines=30
                 echo =======================================================================================================
         	echo =       [rl] . Reload                              =       [ex] . THOAT CHUONG TRINH                  =
  	        echo =======================================================================================================
-		 set /p checkpr=" VUI LONG NHAP LUA CHON CUA BAN :   "
-			 if %checkpr%=="rl" (
+		 set /p no_device=" VUI LONG NHAP LUA CHON CUA BAN :   "
+			 if %no_device%=="rl" (
 				cls
 				goto checkpr
-			) else if %checkpr%=="ex" (
+			) else if %no_device%=="ex" (
 				exit
 		            ) else (
 		                cls
