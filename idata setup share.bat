@@ -47,8 +47,8 @@ mode con: cols=110 lines=30
                 echo =                                    VUI LONG KIEM TRA VA THU LAI                                     =
                 echo =                                                                                                     =
                 echo =======================================================================================================
-		             echo = 		rl: reload                           	=		ex: exit			                                               =
- 	             	echo =======================================================================================================
+        	echo =       [rl] . Reload                              =       [ex] . THOAT CHUONG TRINH                  =
+ 	        echo =======================================================================================================
 		 set /p checkpr=" VUI LONG NHAP LUA CHON CUA BAN :   "
 			 if %checkpr%=="rl" (
 				cls
@@ -61,6 +61,8 @@ mode con: cols=110 lines=30
 		                echo.
 		                echo                LUA CHON BAN NHAP VAO KHONG HOP LE
 		                echo                        VUI LONG NHAP LAI !
+                        echo.
+                        echo.
 		                goto no_device
                )
     ::=========================================================================================================================
@@ -124,6 +126,9 @@ cls
             ) else if %mainmenu%==11 (
                 cls
                 goto menu_input_wifi_pass
+            ) else if "%mainmenu%"=="nang_cao" (
+                cls
+                goto cai_dat_nang_cao
             ) else if "%mainmenu%"=="rs" (
                 cls
                  adb reboot
@@ -914,6 +919,60 @@ cls
                             echo                LUA CHON BAN NHAP VAO KHONG HOP LE
                             echo                        VUI LONG NHAP LAI !
                             goto menu_input_wifi_pass
+                        )
+            ::=================================================================================================================
+            rem pro ===========================================================================================================
+                :cai_dat_nang_cao
+                    cls
+                     adb devices -l
+                    echo.
+                    echo.
+                    echo ============================================= MENU PROGRAM ============================================
+                    echo =======================================================================================================
+                    echo =  [01] . Khoi dong lai thiep bi                   =                                                  =
+                    echo =  [02] . Khoi dong lai va vao recovery mode (C1)  =                                                  =
+                    echo =  [03] . Khoi dong lai va vao recovery mode (C2)  =                                                  =
+                    echo =  [04] . Khoi dong lai va vao fastboot            =                                                  =
+                    echo =                                                  =                                                  =
+                    echo =                                                  =                                                  =
+                    echo =  [00] . BACK                                     =  [H] . HOME                                      =
+                    echo =======================================================================================================
+                    echo =       [rs] . Khoi dong lai thiep bi              =       [ex] . THOAT CHUONG TRINH                  =
+                    echo =======================================================================================================
+                    set /p cai_dat_nang_cao=" VUI LONG NHAP LUA CHON CUA BAN :   "
+                        if %cai_dat_nang_cao%==01 (
+                            adb reboot
+                            goto cai_dat_nang_cao
+                        ) else if %cai_dat_nang_cao%==02 (
+                            adb reboot recovery
+                            goto cai_dat_nang_cao
+                        ) else if %cai_dat_nang_cao%==03 (
+                            adb reboot bootloader
+                            timeout /t 10
+                            fastboot reboot recovery
+                            goto cai_dat_nang_cao
+                        ) else if %cai_dat_nang_cao%==04 (
+                            adb reboot bootloader
+                            goto cai_dat_nang_cao
+                        ) else if %cai_dat_nang_cao%==00 (
+                            cls
+                            goto mainmenu
+                        ) else if "%cai_dat_nang_cao%"=="H" (
+                            cls
+                            goto mainmenu            
+                        ) else if "%cai_dat_nang_cao%"=="rs" (
+                            cls
+                             adb reboot
+                            goto cai_dat_nang_cao
+                        ) else if "%cai_dat_nang_cao%"=="ex" (
+                            exit
+                        ) else (
+                            cls
+                            echo.
+                            echo.
+                            echo                LUA CHON BAN NHAP VAO KHONG HOP LE
+                            echo                        VUI LONG NHAP LAI !
+                            goto cai_dat_nang_cao
                         )
             ::=================================================================================================================
 :end
