@@ -806,15 +806,15 @@ cls
                     set /p menu_uninstall_JTSprinter=" VUI LONG NHAP LUA CHON CUA BAN :   "
                         if %menu_uninstall_JTSprinter%==01 (
                             cls
-                             adb uninstall "%packages_name_JT_cu_1%"
+                             adb shell pm uninstall -k --user 0 "%packages_name_JT_cu_1%"
                             goto menu_uninstall_JTSprinter
                         ) else if %menu_uninstall_JTSprinter%==02 (
                             cls
-                             adb uninstall "%packages_name_JT_cu_2%"
+                             adb shell pm uninstall -k --user 0 "%packages_name_JT_cu_2%"
                             goto menu_uninstall_JTSprinter
-			            ) else if %menu_uninstall_JTSprinter%==03 (
+			) else if %menu_uninstall_JTSprinter%==03 (
                             cls
-                             adb uninstall "%packages_name_JT_moi%"
+                             adb shell pm uninstall -k --user 0 "%packages_name_JT_moi%"
                             goto menu_uninstall_JTSprinter
                         ) else if %menu_uninstall_JTSprinter%==04 (
                             cls
@@ -864,7 +864,7 @@ cls
                                 ) else (
                                         adb shell pm list packages -3
                                     echo ************************************************************
-                                        adb uninstall "%uninstall_another_app%"
+                                        adb shell pm uninstall -k --user 0 "%uninstall_another_app%"
                                     if ERRORLEVEL 1 (
                                         cls
                                         echo LOI: Khong the go cai dat ung dung. Vui long kiem tra packages name hoac thu lai.
