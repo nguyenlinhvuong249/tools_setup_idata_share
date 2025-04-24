@@ -844,6 +844,7 @@ cls
                         :uninstall_another_app
                             cls
                              adb shell pm list packages -3
+                             adb shell dumpsys window | findstr mCurrentFocus
                             echo ************************************************************
                             echo.
                             echo.
@@ -851,6 +852,8 @@ cls
                             echo      * NHAP 'back' DE QUAY LAI
                             echo      * NHAP 'exit' DE THOAT
                             echo.
+                            set ung_dung_dang_mo=adb shell dumpsys window | findstr mCurrentFocus
+                            echo "%ung_dung_dang_mo%"
                             set /p uninstall_another_app="packages name uninstall: "
                                 if "%uninstall_another_app%"=="back" (
                                     cls
@@ -896,10 +899,10 @@ cls
                     set /p menu_input_wifi_pass=" VUI LONG NHAP LUA CHON CUA BAN :   "
                         if %menu_input_wifi_pass%==01 (
                             cls
-                            goto menu_auto_setup_K1S 
+                            adb shell input text "%pass_wifi_JT_Expreess_Guest%"
                         ) else if %menu_input_wifi_pass%==02 (
                             cls
-                            goto menu_auto_setup_AUTOID_Q9
+                            adb shell input text "%pass_wifi_jt_expreess_office%"
                         ) else if %menu_input_wifi_pass%==00 (
                             cls
                             goto mainmenu
