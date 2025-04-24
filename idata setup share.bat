@@ -851,9 +851,10 @@ cls
                             echo VUI LONG NHAP PACKAGES NAME CUA UNG DUNG BAN MUON GO CAI DAT
                             echo      * NHAP 'back' DE QUAY LAI
                             echo      * NHAP 'exit' DE THOAT
+                            echo      * NHAP 'RL' DE reload
                             echo.
                             set ung_dung_dang_mo=adb shell dumpsys window | findstr mCurrentFocus
-                            echo "%ung_dung_dang_mo%"
+                            echo %ung_dung_dang_mo%
                             set /p uninstall_another_app="packages name uninstall: "
                                 if "%uninstall_another_app%"=="back" (
                                     cls
@@ -861,6 +862,8 @@ cls
                                 ) else if "%uninstall_another_app%"=="exit" (
                                     cls
                                     exit
+                                ) else if "%uninstall_another_app%"=="RL" (
+                                    goto uninstall_another_app
                                 ) else (
                                         adb shell pm list packages -3
                                     echo ************************************************************
