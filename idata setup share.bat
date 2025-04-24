@@ -844,6 +844,8 @@ cls
                         :uninstall_another_app
                             cls
                              adb shell pm list packages -3
+                            echo.
+                            echo ************************************************************
                              adb shell dumpsys window | findstr mCurrentFocus
                             echo ************************************************************
                             echo.
