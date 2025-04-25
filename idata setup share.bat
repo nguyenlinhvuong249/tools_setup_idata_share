@@ -812,7 +812,7 @@ cls
                             cls
                              adb shell pm uninstall -k --user 0 "%packages_name_JT_cu_2%"
                             goto menu_uninstall_JTSprinter
-			) else if %menu_uninstall_JTSprinter%==03 (
+			            ) else if %menu_uninstall_JTSprinter%==03 (
                             cls
                              adb shell pm uninstall -k --user 0 "%packages_name_JT_moi%"
                             goto menu_uninstall_JTSprinter
@@ -858,8 +858,7 @@ cls
                             echo      * NHAP 'exit' DE THOAT
                             echo      * NHAP 'RL' DE reload
                             echo.
-                            set ung_dung_dang_mo=adb shell dumpsys window | findstr mCurrentFocus
-                            echo %ung_dung_dang_mo%
+                            echo.
                             set /p uninstall_another_app="packages name uninstall: "
                                 if "%uninstall_another_app%"=="back" (
                                     cls
@@ -888,7 +887,58 @@ cls
                         ::=====================================================================================================
                     rem 1.7.2 =================================================================================================
                         :uninstall_pro
+                        :: ===========================================
+                            rem Lấy tên gói của ứng dụng đang chạy
+                                for /f "tokens=2 delims=:" %%i in ('adb shell dumpsys window windows ^| findstr mCurrentFocus') do set pkgLine=%%i
+                                for /f "tokens=1 delims=/" %%j in ("%pkgLine%") do set pkg=%%j
+                            REM Xóa khoảng trắng đầu/cuối nếu có
+                                set pkg=%pkg: =%
+                                set pkg=%pkg:"=%
+                        :: ===========================================
                             cls
+                             adb devices -l
+                            echo.
+                            echo ten goi ung dung dang mo: %pkg%
+                            echo ============================================= MENU PROGRAM ============================================
+                            echo =======================================================================================================
+                            echo = Ung dung %pkg% se duoc go cai dat                                                                   
+                            echo = Ban co chac muon thuc hien ?                                                                        =
+                            echo =  [01] . Co                                                                                          =
+                            echo =  [02] . Khong                                                                                       =
+                            echo =                                                                                                     =
+                            echo =                                                                                                     =
+                            echo =       [00] . BACK                                =       [H] . HOME                                 =
+                            echo =======================================================================================================
+                            echo =       [rs] . Khoi dong lai thiep bi              =       [ex] . THOAT CHUONG TRINH                  =
+                            echo =======================================================================================================
+                            set /p confirm=" VUI LONG NHAP LUA CHON CUA BAN :   "
+                            if %confirm%==01 (
+                                cls
+                                 adb shell pm uninstall -k --user 0 "%pkg%"
+                                goto menu_uninstall_JTSprinter
+                            ) else if %confirm%==02 (
+                                cls
+                                goto menu_uninstall_JTSprinter
+                            ) else if %confirm%==00 (
+                                cls
+                                goto mainmenu
+                            ) else if "%confirm%"=="H" (
+                                cls
+                                goto mainmenu            
+                            ) else if "%confirm%"=="rs" (
+                                cls
+                                 adb reboot
+                                goto menu_uninstall_JTSprinter
+                            ) else if "%confirm%"=="ex" (
+                                exit
+                            ) else (
+                                cls
+                                echo.
+                                echo.
+                                echo                LUA CHON BAN NHAP VAO KHONG HOP LE
+                                echo                        VUI LONG NHAP LAI !
+                                goto uninstall_pro
+                            )
                         ::=====================================================================================================
             rem 1.10 ==========================================================================================================
                 :menu_input_wifi_pass
