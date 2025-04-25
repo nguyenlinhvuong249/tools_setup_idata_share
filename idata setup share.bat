@@ -797,7 +797,7 @@ cls
                     echo =  [02] . Go app cu tren AUTOID Q9                 =                                                  =
                     echo =  [03] . Go phien ban moi                         =                                                  =
                     echo =  [04] . Go app khac                              =                                                  =
-                    echo =                                                  =                                                  =
+                    echo =  [05] . Go app dang mo                           =                                                  =
                     echo =                                                  =                                                  =
                     echo =  [00] . BACK                                     =  [H] . HOME                                      =
                     echo =======================================================================================================
@@ -819,6 +819,9 @@ cls
                         ) else if %menu_uninstall_JTSprinter%==04 (
                             cls
                             goto uninstall_another_app
+                        ) else if %menu_uninstall_JTSprinter%==05 (
+                            cls
+                            goto uninstall_pro
                         ) else if %menu_uninstall_JTSprinter%==00 (
                             cls
                             goto mainmenu
@@ -883,6 +886,10 @@ cls
                                     goto uninstall_another_app
                                 )
                         ::=====================================================================================================
+                    rem 1.7.2 =================================================================================================
+                        :uninstall_pro
+                            cls
+                        ::=====================================================================================================
             rem 1.10 ==========================================================================================================
                 :menu_input_wifi_pass
                     cls
@@ -905,9 +912,11 @@ cls
                         if %menu_input_wifi_pass%==01 (
                             cls
                             adb shell input text "%pass_wifi_JT_Expreess_Guest%"
+                            goto menu_input_wifi_pass
                         ) else if %menu_input_wifi_pass%==02 (
                             cls
                             adb shell input text "%pass_wifi_jt_expreess_office%"
+                            goto menu_input_wifi_pass
                         ) else if %menu_input_wifi_pass%==00 (
                             cls
                             goto mainmenu
@@ -941,7 +950,7 @@ cls
                     echo =  [02] . Khoi dong lai va vao recovery mode (C1)  =                                                  =
                     echo =  [03] . Khoi dong lai va vao recovery mode (C2)  =                                                  =
                     echo =  [04] . Khoi dong lai va vao fastboot            =                                                  =
-                    echo =                                                  =                                                  =
+                    echo =  [05] . Tat nguon thiep bi                       =                                                  =
                     echo =                                                  =                                                  =
                     echo =  [00] . BACK                                     =  [H] . HOME                                      =
                     echo =======================================================================================================
@@ -961,6 +970,9 @@ cls
                             goto cai_dat_nang_cao
                         ) else if %cai_dat_nang_cao%==04 (
                             adb reboot bootloader
+                            goto cai_dat_nang_cao
+                        ) else if %cai_dat_nang_cao%==05 (
+                            adb shell reboot -p
                             goto cai_dat_nang_cao
                         ) else if %cai_dat_nang_cao%==00 (
                             cls
