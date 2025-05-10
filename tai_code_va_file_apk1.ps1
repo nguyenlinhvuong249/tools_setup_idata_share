@@ -6,7 +6,7 @@ $adbExists = Get-Command adb -ErrorAction SilentlyContinue
 
 $adbFolder = "$PSScriptRoot\adb_temp"
 $adbBinPath = "$adbFolder\platform-tools"
-$adbZipUrl = "https://dl.google.com/android/repository/platform-tools-latest-windows.zip"
+$adbZipUrl = "https://dl.google.com/android/repository/platform-tools-latest-windows.zip?hl=vi"
 $adbZipPath = "$adbFolder\platform-tools.zip"
 
 if (-not $adbExists) {
