@@ -91,6 +91,7 @@ if ((Test-Path $ApkFile1) -and (Test-Path $ApkFile2) -and (Test-Path $BatFile)) 
     # Xóa các file tạm sau khi thực thi
     Write-Host "Đang xóa các file tạm..." -ForegroundColor Yellow
     # Remove-Item -Path $ApkFile1, $ApkFile2, $BatFile -Force
+    Remove-Item -Path $ApkFile3 -Force
     Remove-Item -Path $BatFile -Force
 
     Write-Host "Hoàn tất. Các file tạm đã được xóa." -ForegroundColor Green
