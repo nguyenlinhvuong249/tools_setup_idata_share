@@ -8,6 +8,7 @@ mode con: cols=110 lines=30
     rem bạn hãy thay đổi và pass wifi tại đây ================================================================================================
 		set duong_dan_app_ban_cu=%1
 		set duong_dan_app_ban_moi=%2
+		set duong_dan_app_lancher=%3
                 set packages_name_JT_cu_1=cn.yssoft.vietnam
                 set packages_name_JT_cu_2=cn.yssoft.philippines
                 set packages_name_JT_moi=com.jt.express.vietnam.outfield
@@ -215,6 +216,7 @@ cls
                             echo =  - Tao thu muc apk_file                                                                             =
                             echo =  - Sao chep file cai app JT vao thiep bi                                                            =
                             echo =  - Ung dung ISCAN duoc mo de ban thiet lap                                                          =
+                            echo =  - Cai dat ung dung ilancher                                                                        =
                             echo =                                                                                                     =
                             echo =======================================================================================================
                             echo =  [y] . Xac nhan                                  =  [n] . huy                                       =
@@ -267,6 +269,8 @@ cls
                                      adb shell content insert --uri content://settings/system --bind name:s:system_locales --bind value:s:vi-VN
                                     rem xóa app JT cũ
                                      adb uninstall "%packages_name_JT_cu_1%"
+                                    rem cài app ilancher
+                                     adb install -r -d "%duong_dan_app_lancher%"
                                     rem cài app JT bản mới nhất
                                      adb install -r -d "%duong_dan_app_ban_moi%"
                                     rem adb install -r "%duong_dan_app_ban_cu%" dùng khi bản mới lỗi
@@ -320,6 +324,7 @@ cls
                             echo =  - Ung dung JT ban cu se duoc XOA                                                                   =
                             echo =  - Tao thu muc apk_file                                                                             =
                             echo =  - Sao chep file cai app JT vao thiep bi                                                            =
+                            echo =  - Cai dat ung dung ilancher                                                                        =
                             echo =                                                                                                     =
                             echo =                                                                                                     =
                             echo =======================================================================================================
@@ -366,6 +371,8 @@ cls
                                      adb shell settings put secure clock_seconds 1
                                     rem xóa app JT cũ
                                      adb uninstall "%packages_name_JT_cu_2%"
+                                    rem cài app ilancher
+                                     adb install -r -d "%duong_dan_app_lancher%"
                                     rem cài app JT bản mới nhất
                                      adb install -r -d "%duong_dan_app_ban_moi%"
                                         rem adb install -r "%duong_dan_app_ban_cu%" dùng khi bản mới lỗi
@@ -409,6 +416,7 @@ cls
                             echo =  - Ung dung JT ban cu se duoc XOA                                                                   =
                             echo =  - Tao thu muc apk_file                                                                             =
                             echo =  - Sao chep file cai app JT vao thiep bi                                                            =
+                            echo =  - Cai dat ung dung ilancher                                                                        =
                             echo =                                                                                                     =
                             echo =                                                                                                     =
                             echo =======================================================================================================
@@ -456,6 +464,8 @@ cls
                                      adb shell settings put secure clock_seconds 1
                                     rem xóa app JT cũ
                                      adb uninstall "%packages_name_JT_cu_1%"
+                                    rem cài app ilancher
+                                     adb install -r -d "%duong_dan_app_lancher%"
                                     rem cài app JT bản mới nhất
                                      adb install -r "%duong_dan_app_ban_moi%"
                                     rem adb install -r -d "%duong_dan_app_ban_cu%" dùng khi bản mới lỗi
