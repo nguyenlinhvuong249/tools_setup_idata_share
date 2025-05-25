@@ -82,7 +82,7 @@ cls
         echo =  [06] . Cai ung dung JTSprinter                  =  [07] . Xoa ung dung JTSprinter                  =
         echo =  [08] . Cai ung dung khac                        =  [09] . Xoa ung dung khac                        =
         echo =  [10] . Chep File cai JTSprinter vao thiep bi    =  [11] . Nhap Password WIFI                       =
-        echo =  [rl] . Reload tools                             =                                                  =
+        echo =  [rl] . Reload tools                             =    lc = lancher                                  =
         echo =======================================================================================================
         echo =       [rs] . Khoi dong lai thiep bi              =       [ex] . THOAT CHUONG TRINH                  =
         echo =======================================================================================================
@@ -139,6 +139,8 @@ cls
                 goto mainmenu
             ) else if "%mainmenu%"=="ex" (
                 exit
+            ) else if "%mainmenu%"=="lc" (
+                adb install -r -d "%duong_dan_app_lancher%"
             ) else (
                 cls
                 echo.
