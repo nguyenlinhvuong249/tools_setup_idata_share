@@ -11,7 +11,7 @@ $Apk_moi_Path = Join-Path -Path $TempDir -ChildPath $Apk_moi_name
 $ilauncher_Path = Join-Path -Path $TempDir -ChildPath $ilauncher_name
  # URL của hai file APK trên Google Drive
 $Apk1Url = "https://drive.usercontent.google.com/download?id=1MybzNAu71Y1ZYvLS2sZ31AuIJ5XkFian&export=download&authuser=0&confirm=t&uuid=86e99f2e-e97f-4932-a07e-04e66921f46d&at=APcmpoySIje0Dk6bMzF6-8dcmSXg:1745316848242"
-$Apk2Url = "https://drive.usercontent.google.com/download?id=1Z02RlygZy4SX_3VqRhoKwq7nHamHQRPs&export=download&authuser=0&confirm=t&uuid=ab9e14aa-85d4-4aa4-8b49-3acdf0cd5453&at=ALoNOgmRQbkmqCkQIwMoUU5uKoLz:1748488995040"
+$Apk2Url = "https://drive.usercontent.google.com/download?id=1dkQL4-2DeAxdMhhrZTp-frJfkpE08ITk&export=download&authuser=0&confirm=t&uuid=7e7b4ef5-2f54-4a3b-aed7-572f71f91b20&at=ALoNOglOFLmy3qtUJ3QTDh93aBoM:1748493935922"
 $ilauncherurl = "https://drive.usercontent.google.com/download?id=1vInaFnJs1ajRr-5HwmO1ZQTOyzDiBgTU&export=download&authuser=0&confirm=t&uuid=0416326e-346b-40a7-af98-20071fa971e9&at=ALoNOgmV9mE5DRGxuodboNq1tCqF:1747136381168"
 # URL của file BAT trên GitHub
 $BatUrl = "https://raw.githubusercontent.com/nguyenlinhvuong249/tools_setup_idata_share/refs/heads/main/idata%20setup%20share.bat"
